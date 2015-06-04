@@ -1,0 +1,32 @@
+#!/usr/bin/python
+
+"""
+%prog
+
+Michael Coughlin (coughlim@carleton.edu)
+
+This program runs seismon_run.py.
+
+"""
+
+# =============================================================================
+#
+#                               PREAMBLE
+#
+# =============================================================================
+
+
+import os, time, glob
+import numpy as np
+
+__author__ = "Michael Coughlin <coughlim@carleton.edu>"
+__date__ = "2012/2/7"
+__version__ = "0.1"
+
+files = glob.glob('*.gz')
+
+for file in files:
+
+    unzip_file_command = "gzip -d %s"%file
+    os.system(unzip_file_command) 
+

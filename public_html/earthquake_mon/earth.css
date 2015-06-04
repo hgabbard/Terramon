@@ -1,0 +1,8 @@
+$('#sphere').earth3d({
+  dragElement: $('#locations'), // where do we catch the mouse drag
+  sphere: { // rotation and size of the planet
+    tilt: 40,
+    turn: 20,
+    r: 10
+  }
+});

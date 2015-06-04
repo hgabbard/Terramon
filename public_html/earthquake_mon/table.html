@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title> Expected Seismic Wave Arrival Times for Recent Earthquakes </title> 
+		<h1> <center>Expected Seismic Wave Arrival Times for Recent Earthquakes</center> </h1>
+
+	</head>
+
+	<body>
+
+		<script>
+var fileDisplayArea = document.getElementById('fileDisplayArea');
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                fileDisplayArea.innerText = allText 
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+readTextFile("/home/hunter.gabbard/public_html/earthquakes.txt");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+		<p> This site contains data about earthquake events and their projected arrivals at the LIGO observatories in Hanford (LHO) and Livingston (LLO).</p>
+		<p> </p>
+		<p> This site refreshes once every 30 minutes to get the most recent data. </p>
+		<p> Last refresh: 
+			<script>
+			var d = new Date();
+			d
+			</script>
+			
+		</p>
+		<br></br>
+		<p> Guide to this webpage:</p>
+		<ul type="square">
+			<li> This list gives expected arrival times of earthquakes at both LIGO interferometers. </li>
+			<li> All clock times are in UTC. </li>
+			<li> Color indicates likelihood of appreciable seismic disturbance at that observatory: Green is low and Red is high. </li>
+			<li> Questions or comments should be addressed to Hunter Gabbard at hagabbar@go.olemiss.edu </li>
+		</ul>	
+		
+		<br></br>
+		<h4> Information concerning the arrival times at LIGO Hanford and LIGO Livingston observatories: </h4>
+			
+		
+		<table border="1" style="width:100%">
+			<tr> 
+				<th> EQ Date (UTC) </th>
+				<th> EQ Time (UTC) </th>
+				<th> EQ Latitude </th>
+				<th> EQ Longitude </th>
+				<th> Depth (km) </th>
+				<th> Mag </th>
+				<th> |- Time (s) to -| llo </th>
+				<th> |- Time (s) to -| lho </th>
+				<th> |--- Expected arrival time (llo)---| </th>
+				<th> |--- Expected arrival time (lho)---| </th>
+				<th> EQ Origin Location </th>
+ 
+
+			</tr>
+
+			<tr>
+				<td> Hunter </td>
+				<td> Gabbard </td>
+				<td> Ole Miss </td>
+			</tr>
+		</table>
+
+		<br> </br>
+		<p> Link to raw data: <a href="https://ldas-jobs.ligo.caltech.edu/~hunter.gabbard/events.txt">events</a>.</p>
+		<p> Link to most recent run (xml files): <a href="https://ldas-jobs.ligo.caltech.edu/~hunter.gabbard/earthquake_mon/most_recent_run">Most Recent Run XML</a>.</p>
+		<p> Link to most recent run (iris files): <a href="https://ldas-jobs.ligo.caltech.edu/~hunter.gabbard/earthquake_mon/most_recent_iris">Most Recent Run IRIS</a>.</p>
+		<p> Link to past runs (xml files): <a href="https://ldas-jobs.ligo.caltech.edu/~hunter.gabbard/earthquake_mon/old_runs">Old Runs</a>.</p>
+
+	</body>
+	
+</html>
